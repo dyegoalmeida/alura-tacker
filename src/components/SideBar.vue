@@ -1,8 +1,8 @@
 <template>
   <header>
-    <h1>
-      <img src="" alt="">
-    </h1>
+      <h1>
+          <img src="../assets/logo.png" alt="">
+      </h1>
   </header>
 
 </template>

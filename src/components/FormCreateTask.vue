@@ -9,13 +9,13 @@
           <section>
             <strong>00:00:00</strong>
           </section>
-          <button class="button">
+          <button class="button" @click="start">
           <span class="icon">
             <i class="fas fa-play"></i>
           </span>
           <span>play</span>
           </button>
-          <button class="button">
+          <button class="button" @click="finish">
           <span class="icon">
             <i class="fas fa-stop"></i>
           </span>
@@ -27,8 +27,20 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import { defineComponent } from "vue";
 
+export default defineComponent({
+  name: "FormularioCriacaoTarefa",
+  methods: {
+    start () {
+      console.log('Start');
+    },
+    finish (){
+      console.log('Finishing');
+    }
+  }
+});
 </script>
 
 <style scoped>

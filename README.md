@@ -22,3 +22,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### TODO
+[ ] Centralizer logo do VUE, está alinhado a direita.
