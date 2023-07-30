@@ -2,63 +2,32 @@
   <div class="box">
     <div class="columns">
         <div class="column is-8" role="form" aria-label="Formulário para criação de uma nova tarefa">
-          <input type="text" name="" id="" class="input" placeholder="Qual tarefa você deseja iniciar?">
+          <input type="text" name="" id="" class="input" placeholder="Qual tarefa você deseja iniciar?" v-model="description">
         </div>
       <div class="column">
-        <div class="is-flex is-align-items-center is-justify-content-space-between">
-          <section>
-            <strong> {{ elapsedTime }}</strong>
-          </section>
-          <button class="button" @click="start">
-          <span class="icon">
-            <i class="fas fa-play"></i>
-          </span>
-          <span>play</span>
-          </button>
-          <button class="button" @click="finish">
-          <span class="icon">
-            <i class="fas fa-stop"></i>
-          </span>
-          <span>stop</span>
-          </button>
-        </div>
+        <Timer @inTimerFinished="finishedTask"/>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
+import Timer from "@/components/Timer.vue";
 
 export default defineComponent({
   name: "FormCreateTask",
+  components: {Timer},
   data () {
-    return{
-      timeInSeconds: 0,
-      stopwatch: 0
-    }
-  },
-  computed: {
-    elapsedTime (): string {
-      return new Date(this.timeInSeconds * 1000).toISOString().substring(11,19);
+    return {
+      description : ''
     }
   },
   methods: {
-    start () {
-      /**
-       * 1 seg = 1000ms
-       */
-      this.stopwatch = setInterval(() => {
-        this.timeInSeconds += 1;
-      }, 1000)
-    },
-    finish (){
-      clearInterval(this.stopwatch);
+    finishedTask(elapsedTime: number) : void{
+      console.log(elapsedTime);
+      console.log(this.description);
     }
   }
 });
 </script>
-
-<style scoped>
-
-</style>
