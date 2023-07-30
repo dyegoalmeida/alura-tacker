@@ -7,7 +7,7 @@
       <div class="column">
         <div class="is-flex is-align-items-center is-justify-content-space-between">
           <section>
-            <strong>00:00:00</strong>
+            <strong> {{ elapsedTime }}</strong>
           </section>
           <button class="button" @click="start">
           <span class="icon">
@@ -31,13 +31,29 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "FormularioCriacaoTarefa",
+  name: "FormCreateTask",
+  data () {
+    return{
+      timeInSeconds: 0,
+      stopwatch: 0
+    }
+  },
+  computed: {
+    elapsedTime (): string {
+      return new Date(this.timeInSeconds * 1000).toISOString().substring(11,19);
+    }
+  },
   methods: {
     start () {
-      console.log('Start');
+      /**
+       * 1 seg = 1000ms
+       */
+      this.stopwatch = setInterval(() => {
+        this.timeInSeconds += 1;
+      }, 1000)
     },
     finish (){
-      console.log('Finishing');
+      clearInterval(this.stopwatch);
     }
   }
 });
