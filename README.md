@@ -1,27 +1,19 @@
-# alura-tracker
+# Alura Tracker
+Projeto desenvolvido na trilha de Vue.
 
-## Project setup
+## Passos para executar o projeto
 ```
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
 npm run serve
 ```
+## Build do projeto
 
-### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Lints and fixes files
+## Lints e corrigir arquivos
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### TODO
-[ ] Centralizer logo do VUE, está alinhado a direita.
