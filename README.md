@@ -1,6 +1,8 @@
 # Alura Tracker
 Projeto desenvolvido na trilha de Vue.
 
+Link do projeto hospedado na vercel: https://alura-tacker.vercel.app/
+
 ## Passos para executar o projeto
 ```
 npm install
